@@ -16,7 +16,7 @@ module Blazer
     private
 
     def ensure_database_url
-      render text: "BLAZER_DATABASE_URL required" if !ENV["BLAZER_DATABASE_URL"] && !Rails.env.development?
+      render text: "A datasource is required" if !Blazer.settings.key?('data_sources')
     end
 
     def process_vars(statement)
