@@ -17,6 +17,7 @@
         <div class="hide"><%= query.name.gsub(/\s+/, "") %></div>
       <% end %>
     </td>
+    <td><%= query.data_source %></td>
     <td class="creator text-right text-muted">
       <% if query.respond_to?(:creator) && (creator = query.creator) && creator.respond_to?(Blazer.user_name) %>
         <% name = creator.send(Blazer.user_name) %>
